@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: python-oompod-test
+  labels:
+    app: python-oomapp-test
+spec:
+  containers:
+  - name: agent-oomcontainer-test
+    image: whatap/agent-python-fastapi
+    ports:
+    - name: fastapi-port
+      containerPort: 8000
+    env:
+    - name: whatap_server_host
+      value: "15.165.146.117"
+    - name: license
+      value: "x41pl22ek7jhv-z43cebasdv4il7-z62p3l35fj5502"
+    - name: app_name
+      value: "JOB-OOM-TEST"
+    - name: trace_logging_enabled
+      value: "true"
+    - name: ENV_OKIND
+      value: "kaeeyoungkim"
+    - name: NODE_IP
+      valueFrom: { fieldRef: { fieldPath: status.hostIP } }
+    - name: NODE_NAME
+      valueFrom: { fieldRef: { fieldPath: spec.nodeName } }
+    - name: POD_NAME
+      valueFrom: { fieldRef: { fieldPath: metadata.name } }
+    resources:
+      limits:
+        cpu:
+          100m
+        memory:
+          100Mi

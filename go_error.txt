@@ -1,0 +1,22 @@
+2023/09/26 07:21:15 http: panic serving 127.0.0.1:37554: runtime error: invalid memory address or nil pointer dereference
+goroutine 116103 [running]:
+net/http.(*conn).serve.func1()
+	/Data/jenkins/jobs/PROD_KUBERNETES_AMD64/workspace/go/src/net/http/server.go:1801 +0xb9
+panic({0x19f7f20, 0x2c7c300})
+	/Data/jenkins/jobs/PROD_KUBERNETES_AMD64/workspace/go/src/runtime/panic.go:1047 +0x266
+main.containerVolumeHandler.func1({0xc000538000, 0xc000502000})
+	/Data/jenkins/jobs/PROD_KUBERNETES_AMD64/workspace/io.whatap.java/whatap.kube.node/golang/cadvisor_helper.go:931 +0x154
+main.executeCommandEx({0xc00075654f, 0x40}, {0xc00085b920, 0x1, 0x1}, 0x1, 0xc00098f948)
+	/Data/jenkins/jobs/PROD_KUBERNETES_AMD64/workspace/io.whatap.java/whatap.kube.node/golang/cadvisor_helper.go:1613 +0x6a6
+main.containerVolumeHandler({0x1eb44b0, 0xc000586000}, 0xc000117440)
+	/Data/jenkins/jobs/PROD_KUBERNETES_AMD64/workspace/io.whatap.java/whatap.kube.node/golang/cadvisor_helper.go:914 +0x1d3
+net/http.HandlerFunc.ServeHTTP(0xc000ed8a00, {0x1eb44b0, 0xc000586000}, 0xc00006f9f8)
+	/Data/jenkins/jobs/PROD_KUBERNETES_AMD64/workspace/go/src/net/http/server.go:2046 +0x2f
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc00011ccc0, {0x1eb44b0, 0xc000586000}, 0xc000ed8500)
+	/var/lib/jenkins/go/pkg/mod/github.com/gorilla/mux@v1.8.0/mux.go:210 +0x1cf
+net/http.serverHandler.ServeHTTP({0xc000117260}, {0x1eb44b0, 0xc000586000}, 0xc000ed8500)
+	/Data/jenkins/jobs/PROD_KUBERNETES_AMD64/workspace/go/src/net/http/server.go:2878 +0x43b
+net/http.(*conn).serve(0xc0009852c0, {0x1ebeb88, 0xc000323f50})
+	/Data/jenkins/jobs/PROD_KUBERNETES_AMD64/workspace/go/src/net/http/server.go:1929 +0xb08
+created by net/http.(*Server).Serve
+	/Data/jenkins/jobs/PROD_KUBERNETES_AMD64/workspace/go/src/net/http/server.go:3033 +0x4e8

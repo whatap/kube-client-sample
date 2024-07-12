@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: comp
+  name: single-container-pod-test
+spec:
+  restartPolicy: Always
+  containers:
+    - name: myapp-1-container-succeeded
+      image: python
+      command: ['python']
+      args: ['-c', 'import math; math.factorial(1000)']
+      resources:
+        requests:
+          memory: 200Mi
+          cpu: 100m
+        limits:
+          memory: 200Mi
+          cpu: 100m

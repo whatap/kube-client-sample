@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: oompod-test
+  labels:
+    app: oomapp-test
+spec:
+  containers:
+  - name: oomcontainer-test
+    image: nginx

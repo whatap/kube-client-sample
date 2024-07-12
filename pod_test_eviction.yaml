@@ -1,0 +1,20 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: evictdiskpod
+  labels:
+    pod: evictdiskpod
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      resources:
+        limits:
+          ephemeral-storage: 5Mi
+      command: ["/bin/sh", "-c"]
+      args:
+        - |
+          sleep 5
+          dd if=/dev/zero of=file bs=1M count=10
+          echo 'write done'
+          while true; do sleep 5; done

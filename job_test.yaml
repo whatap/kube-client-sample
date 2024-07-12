@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  creationTimestamp: null
+  name: my-job-test
+spec:
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: busybox
+        name: my-job
+        command: [ "sh", "-c", "echo 'Job is running'; sleep 36000" ]
+        resources: {}
+      restartPolicy: Never
+status: {}

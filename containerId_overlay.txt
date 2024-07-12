@@ -1,0 +1,31 @@
+6203 4178 0:576 / / rw,relatime - overlay overlay rw,context="system_u:object_r:container_file_t:s0:c17,c23",lowerdir=/var/lib/containers/storage/overlay/l/LRNNBYRUPNTBX5CKWXHNFPOXG7:/var/lib/containers/storage/overlay/l/LWTHVFVLBUBTSJPZHUIBULPUSV:/var/lib/containers/storage/overlay/l/OV6EKMPPX76EGWLRB3XISEEGR3:/var/lib/containers/storage/overlay/l/QSYYR4HUGGUQ26ACYAG4J6KPYU:/var/lib/containers/storage/overlay/l/BJOZOOSOO2EH2XXGP2ZKKOKVPK:/var/lib/containers/storage/overlay/l/AL637UKW67LAAF7AKWYJLAPPJQ,upperdir=/var/lib/containers/storage/overlay/722ba1456fb3442598ead718c20dafa14497340b76309af81cd63a3b40265602/diff,workdir=/var/lib/containers/storage/overlay/722ba1456fb3442598ead718c20dafa14497340b76309af81cd63a3b40265602/work,volatile
+6204 6203 0:578 / /proc rw,nosuid,nodev,noexec,relatime - proc proc rw
+6205 6203 0:579 / /dev rw,nosuid - tmpfs tmpfs rw,context="system_u:object_r:container_file_t:s0:c17,c23",size=65536k,mode=755,inode64
+6206 6205 0:580 / /dev/pts rw,nosuid,noexec,relatime - devpts devpts rw,context="system_u:object_r:container_file_t:s0:c17,c23",gid=5,mode=620,ptmxmode=666
+6207 6205 0:567 / /dev/mqueue rw,nosuid,nodev,noexec,relatime - mqueue mqueue rw,seclabel
+6208 6203 0:581 / /sys ro,nosuid,nodev,noexec,relatime - sysfs sysfs ro,seclabel
+6209 6208 0:25 / /sys/fs/cgroup ro,nosuid,nodev,noexec,relatime - cgroup2 cgroup rw,seclabel
+6210 6205 0:566 / /dev/shm rw,nosuid,nodev,noexec,relatime master:1707 - tmpfs shm rw,context="system_u:object_r:container_file_t:s0:c17,c23",size=65536k,inode64
+6211 6203 0:24 /containers/storage/overlay-containers/9f0234b47a65cf00577deeb0361a620db2d884deaec411bde45cc240d0718432/userdata/resolv.conf /etc/resolv.conf rw,nosuid,nodev,noexec master:16 - tmpfs tmpfs rw,seclabel,size=3217680k,nr_inodes=819200,mode=755,inode64
+6212 6203 0:24 /containers/storage/overlay-containers/9f0234b47a65cf00577deeb0361a620db2d884deaec411bde45cc240d0718432/userdata/hostname /etc/hostname rw,nosuid,nodev master:16 - tmpfs tmpfs rw,seclabel,size=3217680k,nr_inodes=819200,mode=755,inode64
+6213 6203 0:24 /containers/storage/overlay-containers/9f0234b47a65cf00577deeb0361a620db2d884deaec411bde45cc240d0718432/userdata/.containerenv /run/.containerenv rw,nosuid,nodev master:16 - tmpfs tmpfs rw,seclabel,size=3217680k,nr_inodes=819200,mode=755,inode64
+6214 6203 0:24 /containers/storage/overlay-containers/7708f0472d0cb429d5a975d65ba3790425d28d14f152af205fec9e6e6e7844c9/userdata/passwd /etc/passwd rw,nosuid,nodev,noexec master:16 - tmpfs tmpfs rw,seclabel,size=3217680k,nr_inodes=819200,mode=755,inode64
+6231 6203 259:4 /ostree/deploy/fedora-coreos/var/lib/kubelet/pods/226e769a-98c6-4bba-b282-444877872d76/etc-hosts /etc/hosts rw,relatime - xfs /dev/nvme0n1p4 rw,seclabel,attr2,inode64,logbufs=8,logbsize=32k,prjquota
+6232 6205 259:4 /ostree/deploy/fedora-coreos/var/lib/kubelet/pods/226e769a-98c6-4bba-b282-444877872d76/containers/route-controller-manager/e3183e27 /dev/termination-log rw,relatime - xfs /dev/nvme0n1p4 rw,seclabel,attr2,inode64,logbufs=8,logbsize=32k,prjquota
+6233 6203 0:24 /containers/storage/overlay-containers/7708f0472d0cb429d5a975d65ba3790425d28d14f152af205fec9e6e6e7844c9/userdata/run/secrets /run/secrets rw,nosuid,nodev - tmpfs tmpfs rw,seclabel,size=3217680k,nr_inodes=819200,mode=755,inode64
+6234 6203 259:4 /ostree/deploy/fedora-coreos/var/lib/kubelet/pods/226e769a-98c6-4bba-b282-444877872d76/volumes/kubernetes.io~configmap/config /run/configmaps/config ro,relatime - xfs /dev/nvme0n1p4 rw,seclabel,attr2,inode64,logbufs=8,logbsize=32k,prjquota
+6235 6203 259:4 /ostree/deploy/fedora-coreos/var/lib/kubelet/pods/226e769a-98c6-4bba-b282-444877872d76/volumes/kubernetes.io~configmap/client-ca /run/configmaps/client-ca ro,relatime - xfs /dev/nvme0n1p4 rw,seclabel,attr2,inode64,logbufs=8,logbsize=32k,prjquota
+6236 6233 0:564 / /run/secrets/serving-cert ro,relatime - tmpfs tmpfs rw,seclabel,size=14937424k,inode64
+6237 6233 0:565 / /run/secrets/kubernetes.io/serviceaccount ro,relatime - tmpfs tmpfs rw,seclabel,size=14937424k,inode64
+4179 6204 0:578 /bus /proc/bus ro,nosuid,nodev,noexec,relatime - proc proc rw
+4180 6204 0:578 /fs /proc/fs ro,nosuid,nodev,noexec,relatime - proc proc rw
+4181 6204 0:578 /irq /proc/irq ro,nosuid,nodev,noexec,relatime - proc proc rw
+4219 6204 0:578 /sys /proc/sys ro,nosuid,nodev,noexec,relatime - proc proc rw
+4224 6204 0:578 /sysrq-trigger /proc/sysrq-trigger ro,nosuid,nodev,noexec,relatime - proc proc rw
+4237 6204 0:582 / /proc/acpi ro,relatime - tmpfs tmpfs ro,context="system_u:object_r:container_file_t:s0:c17,c23",inode64
+4250 6204 0:579 /null /proc/kcore rw,nosuid - tmpfs tmpfs rw,context="system_u:object_r:container_file_t:s0:c17,c23",size=65536k,mode=755,inode64
+4262 6204 0:579 /null /proc/keys rw,nosuid - tmpfs tmpfs rw,context="system_u:object_r:container_file_t:s0:c17,c23",size=65536k,mode=755,inode64
+4274 6204 0:579 /null /proc/latency_stats rw,nosuid - tmpfs tmpfs rw,context="system_u:object_r:container_file_t:s0:c17,c23",size=65536k,mode=755,inode64
+4350 6204 0:579 /null /proc/timer_list rw,nosuid - tmpfs tmpfs rw,context="system_u:object_r:container_file_t:s0:c17,c23",size=65536k,mode=755,inode64
+4357 6204 0:584 / /proc/scsi ro,relatime - tmpfs tmpfs ro,context="system_u:object_r:container_file_t:s0:c17,c23",inode64
+4358 6208 0:585 / /sys/firmware ro,relatime - tmpfs tmpfs ro,context="system_u:object_r:container_file_t:s0:c17,c23",inode64

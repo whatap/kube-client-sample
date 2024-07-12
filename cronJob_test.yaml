@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  creationTimestamp: null
+  name: my-cron-job
+spec:
+  jobTemplate:
+    metadata:
+      creationTimestamp: null
+      name: my-cron-job
+    spec:
+      template:
+        metadata:
+          creationTimestamp: null
+        spec:
+          containers:
+          - image: busybox
+            name: my-cron-job
+            command: [ "sh", "-c", "echo 'CronJob is running'; sleep 36000" ]
+            resources: {}
+          restartPolicy: OnFailure
+  schedule: '*/1 * * * *'
+status: {}

@@ -1,0 +1,25 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: evictdiskpod
+  labels:
+    pod: evictdiskpod
+spec:
+  containers:
+    - name: busybox
+      image: k8s.gcr.io/e2e-test-images/nginx:1.14-2
+      resources:
+        limits:
+          ephemeral-storage: 5Mi
+      command: ["/bin/sh", "-c"]
+      args:
+        - |
+          _term() {
+              echo "Caught SIGTERM signal!"
+              while true; do sleep 5; done
+          }
+          trap _term SIGTERM
+          sleep 10
+          dd if=/dev/zero of=file bs=1M count=10
+          echo 'write done'
+          while true; do sleep 5; done

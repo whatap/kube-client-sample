@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jykim-oom-pod
+spec:
+  containers:
+  - name: jykim-oom-container
+    image: tiangolo/uvicorn-gunicorn-fastapi
+    resources:
+      limits:
+        memory: 100Mi

@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: oom-test
+  name: oom-test
+spec:
+  replicas: 20
+  selector:
+    matchLabels:
+      app: oom-test
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: oom-test
+    spec:
+      containers:
+        - image: whatap/agent-python-fastapi-mac:latest
+          name: oom-container
+          ports:
+            - name: oom-test-port
+              containerPort: 8000
+          resources:
+            requests:
+              cpu:
+                200m
+              memory:
+                500Mi
+          env:
+            - name: whatap_server_host
+              value: "15.165.146.117"
+            - name: license
+              value: "x423h2197u810-x1jh0prkj2ofme-z2v3cc6u6r6fjk"
+            - name: app_name
+              value: "OOM-TEST"
+            - name: trace_logging_enabled
+              value: "true"
+            - name: whatap.okind
+              value: "kaeeyoungkim"
+            - name: NODE_IP
+              valueFrom: { fieldRef: { fieldPath: status.hostIP } }
+            - name: NODE_NAME
+              valueFrom: { fieldRef: { fieldPath: spec.nodeName } }
+            - name: POD_NAME
+              valueFrom: { fieldRef: { fieldPath: metadata.name } }
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: oom-test-service
+spec:
+  selector:
+    app: oom-test
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: oom-test-port
+  type: NodePort
+
